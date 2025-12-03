@@ -211,6 +211,7 @@ export const updateWeather = function ( lat, lon )
       timezone,
     } = currentWeather;
     const [ { description, icon } ] = weather;
+    sendWeatherAlert(description);
     const card = document.createElement( "div" );
     card.classList.add( "card", "card-lg", "current-weather-card" );
 
@@ -523,4 +524,5 @@ function sendWeatherAlert(description) {
 
   showWeatherToast(message);
 }
+
 
