@@ -486,3 +486,41 @@ export const updateWeather = function ( lat, lon )
 };
 
 export const error404 = () => ( errorContent.style.display = "flex" );
+/* ---------------- WEATHER ALERT TOAST ---------------- */
+
+function showWeatherToast(message) {
+  const toast = document.getElementById("weather-toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 4000);
+}
+
+function sendWeatherAlert(description) {
+  const desc = description.toLowerCase();
+  let message = "";
+
+  if (desc.includes("rain")) {
+    message = "🌧️ Rainy weather today. Carry an umbrella!";
+  }
+  else if (desc.includes("snow")) {
+    message = "❄️ Snowfall expected. Stay warm and be careful!";
+  }
+  else if (desc.includes("clear")) {
+    message = "☀️ Clear and sunny! A beautiful day outside.";
+  }
+  else if (desc.includes("cloud")) {
+    message = "☁️ Cloudy skies today. Calm and cool weather.";
+  }
+  else if (desc.includes("thunder")) {
+    message = "⛈️ Thunderstorm alert! Better stay safe indoors.";
+  }
+  else {
+    message = "🌤️ Normal weather today.";
+  }
+
+  showWeatherToast(message);
+}
+
