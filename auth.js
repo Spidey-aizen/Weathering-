@@ -5,12 +5,16 @@ import { getAuth, signInWithEmailAndPassword }
   from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // TODO: Replace with your Firebase config
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-};
 
+const firebaseConfig = {
+  apiKey: "AIzaSyBTY2VkcThOK896oOiX9085uWjYpY8vIH8",
+  authDomain: "sky-now-41234.firebaseapp.com",
+  projectId: "sky-now-41234",
+  storageBucket: "sky-now-41234.firebasestorage.app",
+  messagingSenderId: "77857832780",
+  appId: "1:77857832780:web:e1342824b36bc4555499e9",
+  measurementId: "G-S6G7P245JH"
+};
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
